@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { postNote } from '../Redux/actions'
 
 class NoteForm extends React.Component {
   state = {
@@ -33,7 +34,7 @@ const mdp = (dispatch) => {
   //dispatch: is to take in an action and then call our reducer and
   //pass that action into the reducer
 
-  return { submitHandler: (noteObj) => dispatch({ type: "add note", payload: noteObj }) }
+  return { submitHandler: (noteObj) => dispatch(postNote(noteObj)) }
 }
 
 //we need to include null to represent the mapStateToProps that doesn't
